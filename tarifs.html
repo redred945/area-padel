@@ -9,6 +9,9 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Tarifs AREA PADEL — Caen &amp; Deauville" />
 <meta property="og:description" content="Location de terrain, matériel et cours avec coach — tous les tarifs AREA PADEL." />
+<meta property="og:image" content="https://www.area-padel.fr/assets/img/og-image.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:url" content="https://www.area-padel.fr/tarifs.html" />
 <meta property="og:locale" content="fr_FR" />
 <meta name="theme-color" content="#0a0a0a" />
@@ -53,6 +56,52 @@
       <p class="eyebrow">Tarifs &amp; location</p>
       <h1>Des prix clairs, sans surprise</h1>
       <p class="lead">On a fait un choix simple : rendre le padel accessible, sans jamais renier la qualité de l'expérience. Ici, pas de complexité — on réserve, on joue, on profite.</p>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="wrap">
+      <p class="eyebrow reveal">Simulateur</p>
+      <h2 class="h-lg reveal">Combien pour votre partie ?</h2>
+      <div class="sim-card reveal" id="sim">
+        <div class="sim-controls">
+          <div class="sim-group">
+            <span class="sim-label">Club</span>
+            <div class="sim-pills" data-field="club">
+              <button type="button" class="sim-pill is-active" data-value="caen">Caen-Verson</button>
+              <button type="button" class="sim-pill" data-value="deauville">Deauville</button>
+            </div>
+          </div>
+          <div class="sim-group">
+            <span class="sim-label">Créneau</span>
+            <div class="sim-pills" id="sim-slots"></div>
+          </div>
+          <div class="sim-group">
+            <span class="sim-label">Joueurs</span>
+            <div class="stepper">
+              <button type="button" class="step-btn" data-step="players" data-dir="-1" aria-label="Moins de joueurs">−</button>
+              <span id="sim-players">4</span>
+              <button type="button" class="step-btn" data-step="players" data-dir="1" aria-label="Plus de joueurs">+</button>
+            </div>
+          </div>
+          <div class="sim-group">
+            <span class="sim-label">Raquettes <span class="sim-sub">(3 €)</span></span>
+            <div class="stepper">
+              <button type="button" class="step-btn" data-step="rackets" data-dir="-1" aria-label="Moins de raquettes">−</button>
+              <span id="sim-rackets">0</span>
+              <button type="button" class="step-btn" data-step="rackets" data-dir="1" aria-label="Plus de raquettes">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="sim-total-wrap">
+          <div>
+            <span class="sim-detail" id="sim-detail">Caen-Verson · Heures creuses · 4 joueurs</span>
+            <b class="sim-total" id="sim-total">24 €</b>
+          </div>
+          <a class="btn btn-primary" id="sim-cta" href="https://areapadelcaen.doinsport.club/home">Réserver à Caen</a>
+        </div>
+      </div>
+      <p class="tarif-note reveal" style="margin-top:16px">Simulation indicative — le tarif exact est confirmé lors de la réservation.</p>
     </div>
   </section>
 

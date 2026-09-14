@@ -100,6 +100,78 @@
     });
   });
 
+  // price simulator (Caen: flat per-terrain rate · Deauville: per-player/hour rate)
+  const sim = document.getElementById('sim');
+  if (sim) {
+    const RATES = {
+      caen: {
+        label: 'Caen-Verson',
+        mode: 'terrain',
+        slots: { creuses: { label: 'Heures creuses', price: 24 }, pleines: { label: 'Heures pleines', price: 36 } },
+        cta: 'https://areapadelcaen.doinsport.club/home',
+        ctaLabel: 'Réserver à Caen',
+      },
+      deauville: {
+        label: 'Deauville',
+        mode: 'joueur',
+        slots: { hors: { label: 'Hors vacances', price: 8 }, vacances: { label: 'Vacances & fériés', price: 10 } },
+        cta: 'tel:0626990996',
+        ctaLabel: 'Réserver à Deauville',
+      },
+    };
+    const state = { club: 'caen', slot: 'creuses', players: 4, rackets: 0 };
+    const clubPills = sim.querySelectorAll('[data-field="club"] .sim-pill');
+    const slotWrap = sim.querySelector('#sim-slots');
+    const playersEl = sim.querySelector('#sim-players');
+    const racketsEl = sim.querySelector('#sim-rackets');
+    const totalEl = sim.querySelector('#sim-total');
+    const detailEl = sim.querySelector('#sim-detail');
+    const ctaEl = sim.querySelector('#sim-cta');
+
+    function renderSlots() {
+      const cfg = RATES[state.club];
+      const keys = Object.keys(cfg.slots);
+      if (!keys.includes(state.slot)) state.slot = keys[0];
+      slotWrap.innerHTML = keys.map(k =>
+        `<button type="button" class="sim-pill${k === state.slot ? ' is-active' : ''}" data-value="${k}">${cfg.slots[k].label}</button>`
+      ).join('');
+    }
+    function render() {
+      const cfg = RATES[state.club];
+      state.players = Math.min(4, Math.max(1, state.players));
+      state.rackets = Math.min(4, Math.max(0, state.rackets));
+      playersEl.textContent = state.players;
+      racketsEl.textContent = state.rackets;
+      const slot = cfg.slots[state.slot];
+      const base = cfg.mode === 'joueur' ? slot.price * state.players : slot.price;
+      const total = base + state.rackets * 3;
+      totalEl.textContent = total + ' €';
+      let detail = `${cfg.label} · ${slot.label} · ${state.players} joueur${state.players > 1 ? 's' : ''}`;
+      if (cfg.mode === 'terrain') detail += ` · soit ${Math.round(slot.price / state.players)} €/joueur`;
+      else detail += ' · par heure';
+      if (state.rackets > 0) detail += ` · ${state.rackets} raquette${state.rackets > 1 ? 's' : ''}`;
+      detailEl.textContent = detail;
+      ctaEl.href = cfg.cta;
+      ctaEl.textContent = cfg.ctaLabel;
+    }
+    clubPills.forEach(btn => btn.addEventListener('click', () => {
+      state.club = btn.dataset.value;
+      clubPills.forEach(b => b.classList.toggle('is-active', b === btn));
+      renderSlots(); render();
+    }));
+    slotWrap.addEventListener('click', (e) => {
+      const btn = e.target.closest('.sim-pill'); if (!btn) return;
+      state.slot = btn.dataset.value; renderSlots(); render();
+    });
+    sim.querySelectorAll('.step-btn[data-step="players"]').forEach(btn => btn.addEventListener('click', () => {
+      state.players += parseInt(btn.dataset.dir, 10); render();
+    }));
+    sim.querySelectorAll('.step-btn[data-step="rackets"]').forEach(btn => btn.addEventListener('click', () => {
+      state.rackets += parseInt(btn.dataset.dir, 10); render();
+    }));
+    renderSlots(); render();
+  }
+
   // sticky header shadow on scroll
   const header = document.querySelector('.site-header');
   if (header) {

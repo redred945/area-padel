@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.area-padel.fr/</loc>
+    <loc>https://area-padel-iota.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.area-padel.fr/caen.html</loc>
+    <loc>https://area-padel-iota.vercel.app/caen.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.area-padel.fr/deauville.html</loc>
+    <loc>https://area-padel-iota.vercel.app/deauville.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://www.area-padel.fr/tarifs.html</loc>
+    <loc>https://area-padel-iota.vercel.app/tarifs.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.area-padel.fr/privatisation.html</loc>
+    <loc>https://area-padel-iota.vercel.app/privatisation.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.area-padel.fr/contact.html</loc>
+    <loc>https://area-padel-iota.vercel.app/contact.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

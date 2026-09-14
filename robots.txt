@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.area-padel.fr/sitemap.xml
+Sitemap: https://area-padel-iota.vercel.app/sitemap.xml

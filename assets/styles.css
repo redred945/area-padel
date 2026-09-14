@@ -1,0 +1,74 @@
+/* =========================================================
+   AREA PADEL — Caen (Verson) & Deauville
+   Tokens, reset & shared base layer. Loaded first on every page,
+   then assets/site.css for the "Deux clubs, deux ambiances"
+   component system used sitewide.
+   Comfortaa (titres, rond, identité de marque existante) /
+   Work Sans (texte)
+   ========================================================= */
+
+:root{
+  /* paper / ink */
+  --paper:#fbf7ee;
+  --paper-dim:#f2ecdc;
+  --card:#fffdf7;
+  --ink:#16231b;
+  --ink-dim:#4a5a4f;
+  --ink-faint:#7c8a7f;
+  --line:rgba(22,35,27,.12);
+  --line-soft:rgba(22,35,27,.07);
+
+  /* Caen — indoor, pistes panoramiques */
+  --green-deep:#173a2b;
+  --green:#3d8e2f;
+  --green-bright:#5fb648;
+
+  /* Deauville — outdoor, pistes ocre, mer */
+  --ocre:#d8af30;
+  --ocre-deep:#a97a1f;
+  --sea:#2c5a68;
+
+  --accent:var(--green);
+  --accent-deep:var(--green-deep);
+
+  --f-display:'Comfortaa', ui-rounded, sans-serif;
+  --f-body:'Work Sans', system-ui, sans-serif;
+
+  --wrap:1240px;
+  --pad:clamp(20px, 5vw, 64px);
+  --radius:22px;
+  --radius-sm:12px;
+  --ease:cubic-bezier(.22,.68,0,1);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important}
+}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,h4{margin:0;font-family:var(--f-display);font-weight:700;letter-spacing:-.01em;line-height:1.05}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+.skip-link{
+  position:absolute;left:12px;top:-60px;background:var(--green);color:#fff;
+  padding:10px 16px;border-radius:999px;font-weight:600;z-index:999;transition:top .2s var(--ease);
+}
+.skip-link:focus{top:12px}
+
+::selection{background:var(--ocre);color:var(--green-deep)}
+.count{font-variant-numeric:tabular-nums}

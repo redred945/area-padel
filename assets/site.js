@@ -1,6 +1,17 @@
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // hero / page-hero background video: honour prefers-reduced-motion by
+  // falling back to the dark overlay only (no autoplay, no motion).
+  document.querySelectorAll('.hero-media video, .page-hero-media video').forEach(video => {
+    if (reduceMotion) {
+      video.pause();
+      video.removeAttribute('autoplay');
+      const section = video.closest('.hero, .page-hero');
+      if (section) section.classList.add('is-static');
+    }
+  });
+
   // mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
   const mainNav = document.querySelector('.main-nav');

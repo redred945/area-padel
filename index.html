@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://www.area-padel.fr/assets/img/og-image.jpg" />
 <meta property="og:url" content="https://www.area-padel.fr/" />
 <meta property="og:locale" content="fr_FR" />
-<meta name="theme-color" content="#173a2b" />
+<meta name="theme-color" content="#0a0a0a" />
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -78,8 +78,14 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-media">
+      <video autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="assets/img/hero-video.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
     <div class="wrap">
-      <div>
+      <div class="hero-content">
         <p class="hero-kicker">
           <span>Verson · près de Caen · indoor</span>
           <span>Deauville · face à la mer · outdoor</span>
@@ -88,30 +94,13 @@
         <p class="lead">Chez AREA PADEL, le padel n'est pas juste un sport de plus. Entre Verson et Deauville, nos deux complexes ont été pensés pour une seule chose : donner envie de jouer, de revenir, et de faire du terrain un vrai rendez-vous du quotidien. Pas de licence, pas de prise de tête — on réserve, on joue, on profite.</p>
         <div class="hero-actions">
           <a href="https://areapadelcaen.doinsport.club/home" class="btn btn-primary">Réserver un terrain</a>
-          <a href="privatisation.html" class="btn btn-outline">Organiser un événement</a>
+          <a href="privatisation.html" class="btn btn-ghost-light">Organiser un événement</a>
         </div>
         <div class="hero-meta">
           <div><strong>11</strong><span>pistes au total</span></div>
           <div><strong>2</strong><span>sites, 2 ambiances</span></div>
           <div><strong>39 ans</strong><span>âge moyen des joueurs</span></div>
         </div>
-      </div>
-      <div class="hero-art">
-        <svg class="court-graphic" viewBox="0 0 420 440" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration d'un court de padel">
-          <rect x="14" y="14" width="392" height="412" rx="40" fill="#173a2b"/>
-          <rect x="34" y="60" width="352" height="330" rx="18" fill="none" stroke="#5fb648" stroke-width="3" opacity=".85"/>
-          <line x1="34" y1="225" x2="386" y2="225" stroke="#5fb648" stroke-width="3" opacity=".85"/>
-          <line x1="210" y1="60" x2="210" y2="390" stroke="#5fb648" stroke-width="2" opacity=".5"/>
-          <rect x="34" y="150" width="352" height="150" rx="0" fill="none" stroke="#d8af30" stroke-width="2" stroke-dasharray="2 8" opacity=".7"/>
-          <circle cx="120" cy="110" r="10" fill="#d8af30"/>
-          <circle cx="300" cy="340" r="14" fill="#5fb648"/>
-          <circle cx="70" cy="330" r="6" fill="#ffffff" opacity=".7"/>
-          <circle cx="340" cy="95" r="6" fill="#ffffff" opacity=".7"/>
-          <path d="M34 60 Q34 30 64 30" stroke="#ffffff" stroke-width="3" opacity=".55" fill="none"/>
-          <path d="M386 60 Q386 30 356 30" stroke="#ffffff" stroke-width="3" opacity=".55" fill="none"/>
-          <path d="M34 390 Q34 420 64 420" stroke="#ffffff" stroke-width="3" opacity=".55" fill="none"/>
-          <path d="M386 390 Q386 420 356 420" stroke="#ffffff" stroke-width="3" opacity=".55" fill="none"/>
-        </svg>
         <div class="hero-badge"><span class="pip"></span> 6 pistes panoramiques · Verson</div>
       </div>
     </div>
@@ -165,8 +154,9 @@
   <!-- AMBIANCE / CLUBHOUSE -->
   <section class="section-pad" style="background:var(--paper-dim)">
     <div class="wrap ambiance">
-      <div class="ambiance-media reveal">
-        <img src="assets/img/clubhouse-caen.jpg" alt="Le bar du club house AREA PADEL à Verson, près de Caen" loading="lazy" width="1200" height="900" />
+      <div class="ambiance-media two-up reveal">
+        <img src="assets/img/clubhouse-caen.jpg" alt="Le bar du club house AREA PADEL à Verson, près de Caen" loading="lazy" width="1200" height="900" style="border-radius:var(--radius)" />
+        <img src="assets/img/caen-club-1.webp" alt="Planche apéritive au bar du club house, à Verson" loading="lazy" width="800" height="1000" style="border-radius:var(--radius)" />
         <div class="ambiance-pill">Club house Verson</div>
       </div>
       <div class="reveal">
@@ -212,7 +202,7 @@
           <p class="tarif-note">Base 4 joueurs, soit 6 € à 9 € par personne selon le créneau.</p>
         </div>
         <div class="tarif-card reveal">
-          <header><h3>Deauville</h3><span class="club-tag" style="background:var(--paper-dim);color:var(--sea)">Outdoor</span></header>
+          <header><h3>Deauville</h3><span class="club-tag" style="background:var(--paper-dim);color:var(--accent-deep)">Outdoor</span></header>
           <div class="tarif-rows">
             <div class="tarif-row"><span class="lbl">Hors vacances — par joueur/h</span><span class="val">8 €</span></div>
             <div class="tarif-row"><span class="lbl">Vacances &amp; fériés — par joueur/h</span><span class="val">10 €</span></div>
@@ -230,7 +220,7 @@
     <div class="wrap">
       <div class="priv-band reveal">
         <div>
-          <p class="eyebrow" style="color:var(--ocre)">Entreprises &amp; événements</p>
+          <p class="eyebrow" style="color:var(--accent)">Entreprises &amp; événements</p>
           <h2 class="h-md" style="font-size:clamp(26px,3.2vw,36px);color:#fff">Anniversaire, EVG, séminaire, team building… on gère tout.</h2>
           <ul>
             <li>Réservation des terrains &amp; coordination sportive</li>

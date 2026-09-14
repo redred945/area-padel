@@ -3,33 +3,44 @@
    Tokens, reset & shared base layer. Loaded first on every page,
    then assets/site.css for the "Deux clubs, deux ambiances"
    component system used sitewide.
-   Comfortaa (titres, rond, identité de marque existante) /
-   Work Sans (texte)
+   Identité réelle : noir/blanc/gris, photo & vidéo, typo ronde
+   Comfortaa (titres) / Work Sans (texte). Un seul accent, un
+   vert-gris sourd puisé dans le verre des terrains — utilisé
+   avec parcimonie (petits libellés, survols).
    ========================================================= */
 
 :root{
-  /* paper / ink */
-  --paper:#fbf7ee;
-  --paper-dim:#f2ecdc;
-  --card:#fffdf7;
-  --ink:#16231b;
-  --ink-dim:#4a5a4f;
-  --ink-faint:#7c8a7f;
-  --line:rgba(22,35,27,.12);
-  --line-soft:rgba(22,35,27,.07);
+  /* paper / ink — sections claires */
+  --paper:#ffffff;
+  --paper-dim:#f1f1ee;
+  --card:#ffffff;
+  --ink:#111211;
+  --ink-dim:#5c5d59;
+  --ink-faint:#90918c;
+  --line:rgba(17,18,17,.12);
+  --line-soft:rgba(17,18,17,.07);
 
-  /* Caen — indoor, pistes panoramiques */
-  --green-deep:#173a2b;
-  --green:#3d8e2f;
-  --green-bright:#5fb648;
+  /* noir — sections sombres, chrome du site (header/footer/bandeaux) */
+  --black:#0a0a0a;
+  --black-soft:#151513;
+  --line-dark:rgba(255,255,255,.14);
+  --line-dark-soft:rgba(255,255,255,.08);
 
-  /* Deauville — outdoor, pistes ocre, mer */
-  --ocre:#d8af30;
-  --ocre-deep:#a97a1f;
-  --sea:#2c5a68;
+  /* alias historiques conservés pour compat (voir README des tokens) :
+     --green-deep = noir profond des bandeaux/chrome
+     --green      = noir doux (petits aplats, sélection) */
+  --green-deep:var(--black);
+  --green:var(--black-soft);
+  --green-bright:#ffffff;
 
-  --accent:var(--green);
-  --accent-deep:var(--green-deep);
+  /* alias historiques Deauville — neutralisés, remplacés par la photo */
+  --ocre:#ffffff;
+  --ocre-deep:#111211;
+  --sea:var(--accent-deep);
+
+  /* accent unique, très restreint : vert-gris sourd (verre des terrains) */
+  --accent:#7f9587;
+  --accent-deep:#4c5e53;
 
   --f-display:'Comfortaa', ui-rounded, sans-serif;
   --f-body:'Work Sans', system-ui, sans-serif;
@@ -65,10 +76,10 @@ ul{margin:0;padding:0;list-style:none}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 .skip-link{
-  position:absolute;left:12px;top:-60px;background:var(--green);color:#fff;
+  position:absolute;left:12px;top:-60px;background:var(--black);color:#fff;
   padding:10px 16px;border-radius:999px;font-weight:600;z-index:999;transition:top .2s var(--ease);
 }
 .skip-link:focus{top:12px}
 
-::selection{background:var(--ocre);color:var(--green-deep)}
+::selection{background:var(--accent-deep);color:#fff}
 .count{font-variant-numeric:tabular-nums}
